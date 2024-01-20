@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply font-roboto;
+  }
+  .link-padding {
+    @apply mb-14;
+  }
+
+  /****** home *******/
+  /* products */
+  .home-product-container {
+    @apply flex flex-col md:flex-row gap-8;
+  }
+  .home-product-container img {
+    @apply rounded-sm h-auto md:max-h-[240px] max-w-full aspect-[480/270];
+  }
+  .home-product {
+    @apply flex flex-col gap-3;
+  }
+  .home-product h2 {
+    @apply font-medium text-[18px] leading-tight tracking-[2px] text-[#333] mt-2.5;
+  }
+  .home-product p {
+    @apply font-normal text-[15px] leading-[25px]  text-[#343a40] font-roboto;
+  }
+  .home-product a {
+    @apply font-bold text-[15px] leading-[25px]  text-[#337ab7] hover:text-[#23527c] font-roboto;
+  }
+
+  /* projects */
+  .home-project {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 w-full mt-14 gap-3;
+  }
+  .home-project img {
+    @apply md:max-h-[240px] max-w-full aspect-[480/270];
+  }
+
+  /* section */
+
+  .home-section {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-16 container mx-auto  px-56 py-20;
+  }
+  .home-section-item {
+    @apply flex gap-8;
+  }
+  .home-section-icon {
+    @apply px-4 py-4 h-min border border-[#ccc] rounded-sm;
+  }
+
+  .home-section-info {
+    @apply flex flex-col font-roboto;
+  }
+  .home-section-info h3 {
+    @apply mb-[13px] text-2xl leading-tight tracking-[2px] font-normal text-[#333333];
+  }
+  .home-section-info p {
+    @apply text-[13px]  text-[#343a40] leading-[25px] max-w-[440px];
+  }
+
+  /* Footer */
+  .social div {
+    @apply flex items-center justify-center bg-[#FFFFFF1A] w-9 h-9 cursor-pointer;
+  }
+}
