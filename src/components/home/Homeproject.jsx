@@ -1,5 +1,7 @@
 import React from "react";
 import Break from "../Break";
+import HomeProjectImage from "./HomeProjectImage";
+import HomeProjectLinks from "./HomeProjectLinks";
 
 const Homeproject = () => {
   return (
@@ -10,56 +12,40 @@ const Homeproject = () => {
       <Break />
       <nav className="mt-8">
         <ul className="flex justify-center gap-20 font-montserrat  text-[12px] leading-tight tracking-[2px] text-white">
-          <li>
-            <a
-              className="bg-[#4FB8FF] text-[#333]  hover:bg-[#4FB8FF]  hover:text-[#333] px-1.5 py-1 transition duration-150  "
-              href="#"
-            >
-              ALL PROJECTS
-            </a>
-          </li>
-          <li>
-            <a
-              className=" hover:bg-[#4FB8FF]  hover:text-[#333] px-1.5 py-1 transition duration-150  "
-              href="#"
-            >
-              KITCHEN
-            </a>
-          </li>
-          <li>
-            <a
-              className=" hover:bg-[#4FB8FF]  hover:text-[#333] px-1.5 py-1 transition duration-150  "
-              href="#"
-            >
-              OUTDOOR
-            </a>
-          </li>
-          <li>
-            <a
-              className=" hover:bg-[#4FB8FF]  hover:text-[#333] px-1.5 py-1 transition duration-150  "
-              href="#"
-            >
-              RESIDENTIAL
-            </a>
-          </li>
+          <HomeProjectLinks title="ALL PROJECTS" current={true} />
+          <HomeProjectLinks title="KITCHEN" current={false} />
+          <HomeProjectLinks title=" OUTDOOR" current={false} />
+          <HomeProjectLinks title="RESIDENTIAL" current={false} />
         </ul>
       </nav>
       <div className="home-project">
-        <img
-          src="https://i0.wp.com/karmaden.com/wp-content/uploads/2021/12/beige-marble-leyne-gold-home-project.jpg?fit=1280%2C720&ssl=1"
-          alt=""
+        <HomeProjectImage
+          url={
+            "https://i0.wp.com/karmaden.com/wp-content/uploads/2021/12/beige-marble-leyne-gold-home-project.jpg?fit=1280%2C720&ssl=1"
+          }
+          title="LEYNE GOLD GOME INTERIOR PROJECT"
+          subTitle=""
         />
-        <img
-          src="https://i0.wp.com/karmaden.com/wp-content/uploads/2021/03/sandblasted-marble-pool-house.jpg?fit=1280%2C720&ssl=1"
-          alt=""
+        <HomeProjectImage
+          url={
+            "https://i0.wp.com/karmaden.com/wp-content/uploads/2021/03/sandblasted-marble-pool-house.jpg?fit=1280%2C720&ssl=1"
+          }
+          title="SANDBLASTED MARBLE POOL HOUSE"
+          subTitle="Outdoor"
         />
-        <img
-          src="https://i0.wp.com/karmaden.com/wp-content/uploads/2021/03/bianco-pinata.marble-wall.jpg?fit=1280%2C720&ssl=1"
-          alt=""
+        <HomeProjectImage
+          url={
+            "https://i0.wp.com/karmaden.com/wp-content/uploads/2021/03/bianco-pinata.marble-wall.jpg?fit=1280%2C720&ssl=1"
+          }
+          title="BIANCO PINETA MARBLE WALL"
+          subTitle=""
         />
-        <img
-          src="https://i0.wp.com/karmaden.com/wp-content/uploads/2021/03/grigio-pineta-interior-marble-design.jpg?fit=1280%2C720&ssl=1"
-          alt=""
+        <HomeProjectImage
+          url={
+            "https://i0.wp.com/karmaden.com/wp-content/uploads/2021/03/grigio-pineta-interior-marble-design.jpg?fit=1280%2C720&ssl=1"
+          }
+          title="GRIGIO PINETA MARBLE LIVING ROOM"
+          subTitle="Residental"
         />
       </div>
     </section>

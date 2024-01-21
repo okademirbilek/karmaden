@@ -1,11 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+import { motion } from "framer-motion";
+
+const variantSubNav = {
+  hidden: {
+    y: "30px",
+    opacity: 0,
+  },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.4,
+    },
+  },
+};
 
 const Header = () => {
+  const [isShow, setIsShow] = useState(false);
   const activeStyle = {
     fontWeight: "bold",
     textDecoration: "underline",
   };
+
   return (
     // bg-[#14141478]
     <header className="w-full py-2.5 px-10  bg-[#141414cc] border-b border-b-black fixed top-0 left-0 z-50 ">
@@ -19,14 +36,34 @@ const Header = () => {
               OUR STORY
             </NavLink>
           </li>
-          <li className="link-padding">
+          <li
+            onMouseEnter={() => setIsShow(true)}
+            onMouseLeave={() => setIsShow(false)}
+            className="link-padding flex items-center h-20 relative"
+          >
             <NavLink
               to="/products"
               style={({ isActive }) => (isActive ? activeStyle : null)}
             >
               PRODUCTS
             </NavLink>
+            {isShow ? (
+              <motion.div
+                variants={variantSubNav}
+                initial="hidden"
+                animate="visible"
+                className="absolute -left-6 -bottom-[325px] flex flex-col  sublinks bg-[#4FB8FF]  text-[#333333]  min-w-[205px] "
+              >
+                <li>MARBLE COLLECTION</li>
+                <li>CUT TO SIZE MARBLES</li>
+                <li>MARBLE BLOCKS</li>
+                <li>MARBLE SURFACE FINISHES</li>
+                <li>MARBLE COUNTERTOPS</li>
+                <li>FACADE OVERLAY</li>
+              </motion.div>
+            ) : null}
           </li>
+
           <li className="link-padding">
             <NavLink
               to="/quarries"

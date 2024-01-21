@@ -1,10 +1,17 @@
 import Slider from "react-slick";
 import SliderItem from "./SliderItem";
+import React, { useState } from "react";
 
 import "./slick.css";
 import "./slick-theme.css";
 
+import { AnimatePresence } from "framer-motion";
+
 function SlickSlider(props) {
+  const [currentSlide, setCurrentSlide] = useState({
+    activeSlide: 0,
+    activeSlide2: 0,
+  });
   const settings = {
     dots: true,
     infinite: true,
@@ -13,37 +20,16 @@ function SlickSlider(props) {
     initialSlide: 0,
     autoplay: true,
     autoplaySpeed: 5000,
-    speed: 2000,
+    // fade: true,
+    waitForAnimate: true,
+    // afterChange: (current) => {
+    //   setCurrentSlide(current);
+    // },
+    beforeChange: (current, next) => setCurrentSlide({ activeSlide: next }),
+    afterChange: (current) => setCurrentSlide({ activeSlide2: current }),
+    speed: 1000,
     pauseOnHover: true,
     responsive: [
-      // {
-      //   breakpoint: 1480,
-      //   settings: {
-      //     slidesToShow: 4,
-      //     slidesToScroll: 1,
-      //     infinite: true,
-      //     dots: true,
-      //   },
-      // },
-      // {
-      //   breakpoint: 1185,
-      //   settings: {
-      //     slidesToShow: 3,
-      //     slidesToScroll: 1,
-      //     infinite: true,
-      //     dots: true,
-      //   },
-      // },
-      // {
-      //   breakpoint: 900,
-      //   settings: {
-      //     slidesToShow: 2,
-      //     slidesToScroll: 1,
-      //     infinite: true,
-      //     initialSlide: 0,
-      //     dots: false,
-      //   },
-      // },
       {
         breakpoint: 600,
         settings: {
@@ -59,29 +45,54 @@ function SlickSlider(props) {
   const data = [
     {
       id: 1,
-      url: "https://raoulkramer.de/content/images/size/w2000/2020/02/jon-tyson-P2aOvMMUJnY-unsplash.jpg",
+      url: "https://karmaden.com/wp-content/uploads/2023/02/kumlama-02-1.jpg",
+      subTitle: "ancient heritage",
+      title: "IBIZA WHITE",
+      btnText1: "MUGLA WHITE",
+      btnText2: "GET A QUOTE",
     },
     {
       id: 2,
-      url: "https://raw.githubusercontent.com/brave/brave-core/1.7.x/components/img/newtab/backgrounds/anders-jilden.webp",
+      url: "https://i0.wp.com/karmaden.com/wp-content/uploads/2021/03/kar-maden-grey-marble-living-room.jpg?",
+      subTitle: "a new modern grey marble",
+      title: "PINETA BLACK",
+      btnText1: "GRIGIO PINETA",
+      btnText2: "GET A QUOTE",
     },
     {
       id: 3,
-      url: "https://raw.githubusercontent.com/brave/brave-core/1.7.x/components/img/newtab/backgrounds/andreas-gucklhorn.webp",
+      url: "https://karmaden.com/wp-content/uploads/2021/03/kar-maden-black-marble-bathroom-design-1200x675.jpg",
+      subTitle: "All Natural Stone",
+      title: "DESIGN ELEMENTS",
+      btnText1: "SEE COLLECTION",
+      btnText2: "GET A QUOTE",
     },
     {
       id: 4,
-      url: "https://raw.githubusercontent.com/brave/brave-core/1.7.x/components/img/newtab/backgrounds/andy-mai.webp",
+      url: "https://karmaden.com/wp-content/uploads/2021/03/kar-maden-beige-marble-flooring-1200x675.jpg",
+      subTitle: "a blend of beige marble",
+      title: "CALACATTA LEYNE GOLD",
+      btnText1: "BRECCIA LEYNE",
+      btnText2: "GET A QUOTE",
     },
     {
       id: 5,
-      url: "https://raw.githubusercontent.com/brave/brave-core/1.7.x/components/img/newtab/backgrounds/anton-repponen.webp",
+      url: "https://karmaden.com/wp-content/uploads/2021/03/kar-marden-black-white-marble-wall-cladding-1200x675.jpg",
+      subTitle: "beauty of black & white marble",
+      title: "BIANCO PINETA",
+      btnText1: "BIANCO PINETA",
+      btnText2: "GET A QUOTE",
     },
   ];
   return (
     <Slider {...settings}>
-      {data.map((item) => (
-        <SliderItem key={item.id} data={item} />
+      {data.map((item, index) => (
+        <SliderItem
+          key={item.id}
+          index={index}
+          currentSlide={currentSlide}
+          data={item}
+        />
       ))}
     </Slider>
   );

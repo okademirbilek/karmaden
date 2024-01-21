@@ -11,7 +11,7 @@
     @apply font-roboto;
   }
   .link-padding {
-    @apply mb-14;
+    @apply mb-14 hover:underline;
   }
 
   /****** home *******/
@@ -39,7 +39,7 @@
   .home-project {
     @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 w-full mt-14 gap-3;
   }
-  .home-project img {
+  .home-project .home-project-img {
     @apply md:max-h-[240px] max-w-full aspect-[480/270];
   }
 
@@ -67,6 +67,11 @@
 
   /* Footer */
   .social div {
-    @apply flex items-center justify-center bg-[#FFFFFF1A] w-9 h-9 cursor-pointer;
+    @apply flex items-center justify-center bg-[#FFFFFF1A]  hover:bg-slate-700 w-9 h-9 cursor-pointer;
+  }
+
+  /* dropdown */
+  .sublinks li {
+    @apply leading-[22px] font-montserrat font-[12px] tracking-[2px] flex hover:bg-[#333] hover:text-[#4FB8FF] hover:cursor-pointer px-4 py-3;
   }
 }
