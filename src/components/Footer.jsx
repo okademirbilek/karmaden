@@ -32,12 +32,13 @@ const Footer = () => {
         <div className=" flex items-center justify-center max-w-[1024px] min-h-24 mb-6  ">
           <ul className="flex flex-wrap justify-center items-center gap-2 ">
             {links.map((item, index) => {
+              const max = links.length - 1;
               return (
                 <div key={item} className="flex items-center justify-center">
                   <li>
                     <a
-                      className={`text-[12px] text-[#aaaaaa] hover:text-white  transition duration-500 leading-[22px] font-montserrat tracking-[1px]  after:mx-5 after:${
-                        index !== links.length - 1 && "content-['|']"
+                      className={`text-[12px] text-[#aaaaaa] hover:text-white  transition duration-500 leading-[22px] font-montserrat tracking-[1px]  after:mx-5 ${
+                        index !== max && "after:content-['|']"
                       } `}
                       href="#"
                     >

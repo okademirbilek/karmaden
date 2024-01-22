@@ -74,4 +74,14 @@
   .sublinks li {
     @apply leading-[22px] font-montserrat font-[12px] tracking-[2px] flex hover:bg-[#333] hover:text-[#4FB8FF] hover:cursor-pointer px-4 py-3;
   }
+
+  /* home-project-links */
+
+  .home-project-links {
+    @apply bg-[#333] text-center text-white border-none  transition-all duration-[0.6s] ease-[ease] hover:text-[#333]  hover:bg-left-bottom;
+    /* Old browsers */
+    background: linear-gradient(to right, #4fb8ff 49%, #333 50%);
+    background-position: right bottom;
+    background-size: 200% 100%;
+  }
 }

@@ -11,7 +11,7 @@ const Homeproject = () => {
       </h2>
       <Break />
       <nav className="mt-8">
-        <ul className="flex justify-center gap-20 font-montserrat  text-[12px] leading-tight tracking-[2px] text-white">
+        <ul className="flex justify-center gap-20 font-montserrat   text-[12px] leading-tight tracking-[2px] text-white">
           <HomeProjectLinks title="ALL PROJECTS" current={true} />
           <HomeProjectLinks title="KITCHEN" current={false} />
           <HomeProjectLinks title=" OUTDOOR" current={false} />
