@@ -21,7 +21,7 @@ function SampleNextArrow(props) {
         display: "block",
         color: "white",
       }}
-      size={50}
+      size={40}
       onClick={onClick}
       icon={chevronRight}
     />
@@ -38,7 +38,7 @@ function SamplePrevArrow(props) {
         display: "block",
         color: "white",
       }}
-      size={50}
+      size={40}
       onClick={onClick}
       icon={chevronLeft}
     />
