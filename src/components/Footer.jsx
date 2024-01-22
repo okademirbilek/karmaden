@@ -23,14 +23,14 @@ const Footer = () => {
   ];
   return (
     <footer>
-      <nav className="flex items-center justify-around bg-[#333333]  py-14 ">
+      <nav className="flex-col lg:flex-row gap-10 lg:gap-0 flex items-center justify-around bg-[#333333]  py-14 ">
         <img
           src="https://karmaden.com/wp-content/uploads/2021/03/kar-maden-logo.png "
           alt=""
         />
 
         <div className=" flex items-center justify-center max-w-[1024px] min-h-24 mb-6  ">
-          <ul className="flex flex-wrap justify-center items-center gap-2 ">
+          <ul className="flex flex-wrap justify-center items-center gap-y-6 gap-x-2 lg:gap-2 ">
             {links.map((item, index) => {
               const max = links.length - 1;
               return (

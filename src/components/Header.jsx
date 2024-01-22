@@ -26,8 +26,8 @@ const Header = () => {
   return (
     // bg-[#14141478]
     <header className="w-full py-2.5 px-10  bg-[#141414cc] border-b border-b-black fixed top-0 left-0 z-50 ">
-      <nav className="">
-        <ul className="flex items-center justify-center  gap-16 text-[#55a0f7] font-montserrat text-[12px] leading-[22px] tracking-[2px]">
+      <nav>
+        <ul className="hidden lg:flex items-center justify-center  gap-16 text-[#55a0f7] font-montserrat text-[12px] leading-[22px] tracking-[2px]">
           <li className="link-padding">
             <NavLink
               to="/story"

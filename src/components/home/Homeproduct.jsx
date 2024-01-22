@@ -3,7 +3,7 @@ import Break from "../Break";
 
 const Homeproduct = () => {
   return (
-    <section className="px-8 pb-12 mx-auto mt-28  justify-center">
+    <section className="px-6 pb-6 md:px-8 md:pb-12 mx-auto mt-28  justify-center">
       <h2 className="text-4xl text-center font-light text-[#343a40] leading-tight tracking-[2px]">
         Kar Maden Marble Products
       </h2>

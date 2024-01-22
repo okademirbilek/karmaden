@@ -14,6 +14,28 @@
     @apply mb-14 hover:underline;
   }
 
+  /* scrollbar */
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #585656;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #2e2e2e;
+  }
+
   /****** home *******/
   /* products */
   .home-product-container {
@@ -46,10 +68,10 @@
   /* section */
 
   .home-section {
-    @apply grid grid-cols-1 md:grid-cols-2 gap-16 container mx-auto  px-56 py-20;
+    @apply grid grid-cols-1 md:grid-cols-2 gap-8  lg:gap-16 container mx-auto px-6 py-10  lg:px-56 lg:py-20;
   }
   .home-section-item {
-    @apply flex gap-8;
+    @apply flex gap-6 lg:gap-8;
   }
   .home-section-icon {
     @apply px-4 py-4 h-min border border-[#ccc] rounded-sm;
