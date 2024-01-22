@@ -23,8 +23,8 @@
 
   display: block;
 
-  width: 20px;
-  height: 20px;
+  /* width: 20px;
+  height: 20px; */
   padding: 0;
   -webkit-transform: translate(0, -50%);
   -ms-transform: translate(0, -50%);
@@ -64,7 +64,6 @@
 
   opacity: 0.75;
   /* color: white; */
-  color: red;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -77,26 +76,26 @@
   right: -25px;
   left: auto;
 }
-.slick-prev:before {
+/* .slick-prev:before {
   content: "←";
 }
 [dir="rtl"] .slick-prev:before {
   content: "→";
-}
+} */
 
 .slick-next {
   right: 0;
 }
 [dir="rtl"] .slick-next {
   right: auto;
-  left: -25px;
+  left: 0px;
 }
-.slick-next:before {
+/* .slick-next:before {
   content: "→";
 }
 [dir="rtl"] .slick-next:before {
   content: "←";
-}
+} */
 
 /* Dots */
 .slick-dotted.slick-slider {

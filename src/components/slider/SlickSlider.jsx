@@ -2,10 +2,48 @@ import Slider from "react-slick";
 import SliderItem from "./SliderItem";
 import React, { useState } from "react";
 
+import { Icon } from "react-icons-kit";
+import { chevronLeft } from "react-icons-kit/fa/chevronLeft";
+import { chevronRight } from "react-icons-kit/fa/chevronRight";
+
 import "./slick.css";
 import "./slick-theme.css";
 
 import { AnimatePresence } from "framer-motion";
+
+function SampleNextArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <Icon
+      className={className}
+      style={{
+        ...style,
+        display: "block",
+        color: "white",
+      }}
+      size={50}
+      onClick={onClick}
+      icon={chevronRight}
+    />
+  );
+}
+
+function SamplePrevArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <Icon
+      className={className}
+      style={{
+        ...style,
+        display: "block",
+        color: "white",
+      }}
+      size={50}
+      onClick={onClick}
+      icon={chevronLeft}
+    />
+  );
+}
 
 function SlickSlider(props) {
   const [currentSlide, setCurrentSlide] = useState({
@@ -22,13 +60,12 @@ function SlickSlider(props) {
     autoplaySpeed: 5000,
     // fade: true,
     waitForAnimate: true,
-    // afterChange: (current) => {
-    //   setCurrentSlide(current);
-    // },
     beforeChange: (current, next) => setCurrentSlide({ activeSlide: next }),
     afterChange: (current) => setCurrentSlide({ activeSlide2: current }),
     speed: 1000,
     pauseOnHover: true,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
     responsive: [
       {
         breakpoint: 600,
